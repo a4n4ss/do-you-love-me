@@ -13,8 +13,8 @@ background:linear-gradient(135deg,#ff9ec4,#ffd6e7);
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
-overflow:hidden;
+min-height:100vh;
+padding:20px;
 }
 
 .box{
@@ -23,9 +23,11 @@ padding:30px;
 border-radius:20px;
 text-align:center;
 box-shadow:0 0 20px rgba(0,0,0,.2);
+max-width:700px;
+width:100%;
 }
 
-h1{
+h1,h2{
 color:#ff2d75;
 }
 
@@ -53,29 +55,68 @@ display:none;
 }
 
 .gift{
-margin:10px;
-padding:12px;
+margin:15px 0;
+padding:15px;
 background:#ffb3d1;
-border-radius:10px;
+border-radius:12px;
+cursor:pointer;
+font-size:22px;
+}
+
+.music-card{
+background:#ffd6e7;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+.music-card iframe{
+width:100%;
+height:250px;
+border:none;
+border-radius:15px;
+}
+
+.play-btn{
+margin-top:15px;
+width:100%;
+background:#ff6fa9;
+color:white;
+font-size:20px;
+padding:15px;
+border:none;
+border-radius:15px;
 cursor:pointer;
 }
 
+.play-btn:hover{
+background:#ff4f95;
+}
+
 img{
-width:220px;
+width:260px;
 border-radius:15px;
-margin-top:15px;
+margin-top:20px;
 display:none;
+}
+
+#text{
+display:none;
+color:#ff2d75;
 }
 </style>
 
 </head>
+
 <body>
 
 <div class="box" id="first">
+
 <h1>Do you love me? ❤️</h1>
 
-<button id="yes">YES</button>
-<button id="no">NO</button>
+<button id="yes">YES ❤️</button>
+<button id="no">NO 😅</button>
+
 </div>
 
 <div class="box" id="second">
@@ -86,83 +127,34 @@ display:none;
 🎁 Gift 1
 </div>
 
-<div class="gift" onclick="alert('Once Again - Mad Clown & Kim Na Young 🎵')">
+<div class="gift">
 🎁 Gift 2
 </div>
+
 <h2>🎵 A Song That Reminds Me of Us</h2>
-
-<iframe
-    <h2>🎵 A Song That Reminds Me of Us</h2>
-
-<div style=.music-card{
-    background:#ffd6e7;
-    padding:20px;
-    border-radius:20px;
-    display:flex;
-    gap:20px;
-    align-items:center;
-    justify-content:center;
-    max-width:700px;
-    margin:auto;
-}
-
-.disc{
-    font-size:90px;
-}
-
-.video-box{
-    flex:1;
-}
-
-.video-box iframe{
-    width:100%;
-    height:220px;
-    border-radius:15px;
-}
-
-.video-box button{
-    margin-top:15px;
-    width:100%;
-    padding:15px;
-    background:#ff7fb3;
-    color:white;
-    border:none;
-    border-radius:15px;
-    font-size:20px;
-    cursor:pointer;
-}
-
-    <iframe
-        <h2>🎵 A Song That Reminds Me of Us</h2>
 
 <div class="music-card">
 
-  <div class="disc">💿</div>
+<iframe
+src="https://www.youtube.com/embed/6oCL9a9mZoU"
+title="YouTube video"
+allowfullscreen>
+</iframe>
 
-  <div class="video-box">
-    <iframe
-      src="https://www.youtube.com/embed/6oCL9a9mZoU"
-      title="YouTube video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-
-    <button onclick="window.open('https://youtu.be/6oCL9a9mZoU','_blank')">
-      ▶ Play
-    </button>
-  </div>
+<button class="play-btn"
+onclick="window.open('https://youtu.be/6oCL9a9mZoU','_blank')">
+▶ Play Song
+</button>
 
 </div>
-    
-</iframe>
+
 <div class="gift" onclick="showGift()">
 🎁 Gift 3
 </div>
+
 <img id="photo" src="https://i.postimg.cc/prs57v9z/IMG-0416.jpg">
 
-
-<h2 id="text" style="display:none;color:#ff2d75;">
+<h2 id="text">
 💝 You are my best gift 💝
 </h2>
 
@@ -182,15 +174,13 @@ no.style.top=Math.random()*80+"%";
 document.getElementById("yes").onclick=()=>{
 
 document.getElementById("first").style.display="none";
-
 document.getElementById("second").style.display="block";
 
-}
+};
 
 function showGift(){
 
 document.getElementById("photo").style.display="block";
-
 document.getElementById("text").style.display="block";
 
 }
