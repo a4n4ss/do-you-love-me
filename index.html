@@ -30,7 +30,56 @@ width:100%;
 h1,h2{
 color:#ff2d75;
 }
+.music-card{
+    display:flex;
+    gap:20px;
+    background:#ffd6e7;
+    border-radius:20px;
+    padding:20px;
+    align-items:center;
+    margin:20px 0;
+}
 
+.record{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:radial-gradient(circle,#ff8fb8 15%,#222 16%,#111 35%,#333 60%,#111 100%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-weight:bold;
+    animation:spin 6s linear infinite;
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+.video{
+    flex:1;
+}
+
+.video iframe{
+    width:100%;
+    height:220px;
+    border:none;
+    border-radius:15px;
+}
+
+.play-btn{
+    margin-top:15px;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    background:#ff7fb3;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
 button{
 padding:12px 25px;
 font-size:18px;
@@ -134,7 +183,9 @@ color:#ff2d75;
 <h2>🎵 A Song That Reminds Me of Us</h2>
 
 <div class="music-card">
+<div class="disc">💿</div>
 
+<div class="video-box">
 <iframe
 src="https://www.youtube.com/embed/6oCL9a9mZoU"
 title="YouTube video"
