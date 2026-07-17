@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do you love me? ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9ec4,#ffd6e7);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+h1{
+color:#ff2d75;
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+margin:10px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+}
+
+#yes{
+background:#ff2d75;
+color:white;
+}
+
+#no{
+background:#ddd;
+position:absolute;
+}
+
+#second{
+display:none;
+}
+
+.gift{
+margin:10px;
+padding:12px;
+background:#ffb3d1;
+border-radius:10px;
+cursor:pointer;
+}
+
+img{
+width:220px;
+border-radius:15px;
+margin-top:15px;
+display:none;
+}
+</style>
+
+</head>
+<body>
+
+<div class="box" id="first">
+<h1>Do you love me? ❤️</h1>
+
+<button id="yes">YES</button>
+<button id="no">NO</button>
+</div>
+
+<div class="box" id="second">
+
+<h2>I knew you'd say yes 💕</h2>
+
+<div class="gift" onclick="alert('Nothing 😅')">
+🎁 Gift 1
+</div>
+
+<div class="gift" onclick="alert('Once Again - Mad Clown & Kim Na Young 🎵')">
+🎁 Gift 2
+</div>
+
+<div class="gift" onclick="showGift()">
+🎁 Gift 3
+</div>
+
+<img id="photo" src="photo.jpg">
+
+<h2 id="text" style="display:none;color:#ff2d75;">
+💝 You are my best gift 💝
+</h2>
+
+</div>
+
+<script>
+
+const no=document.getElementById("no");
+
+no.addEventListener("mouseover",()=>{
+
+no.style.left=Math.random()*80+"%";
+no.style.top=Math.random()*80+"%";
+
+});
+
+document.getElementById("yes").onclick=()=>{
+
+document.getElementById("first").style.display="none";
+
+document.getElementById("second").style.display="block";
+
+}
+
+function showGift(){
+
+document.getElementById("photo").style.display="block";
+
+document.getElementById("text").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
