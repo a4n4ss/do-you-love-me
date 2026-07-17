@@ -94,38 +94,67 @@ display:none;
 <iframe
     <h2>🎵 A Song That Reminds Me of Us</h2>
 
-<div style="background:#ffd6e7;padding:20px;border-radius:20px;max-width:500px;margin:auto;">
+<div style=.music-card{
+    background:#ffd6e7;
+    padding:20px;
+    border-radius:20px;
+    display:flex;
+    gap:20px;
+    align-items:center;
+    justify-content:center;
+    max-width:700px;
+    margin:auto;
+}
+
+.disc{
+    font-size:90px;
+}
+
+.video-box{
+    flex:1;
+}
+
+.video-box iframe{
+    width:100%;
+    height:220px;
+    border-radius:15px;
+}
+
+.video-box button{
+    margin-top:15px;
+    width:100%;
+    padding:15px;
+    background:#ff7fb3;
+    color:white;
+    border:none;
+    border-radius:15px;
+    font-size:20px;
+    cursor:pointer;
+}
 
     <iframe
-        width="100%"
-        height="250"
-        src="https://www.youtube.com/embed/6oCL9a9mZoU"
-        title="YouTube video"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        style="border-radius:15px;">
+        <h2>🎵 A Song That Reminds Me of Us</h2>
+
+<div class="music-card">
+
+  <div class="disc">💿</div>
+
+  <div class="video-box">
+    <iframe
+      src="https://www.youtube.com/embed/6oCL9a9mZoU"
+      title="YouTube video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
     </iframe>
 
-    <br><br>
-
-    <button onclick="window.open('https://youtu.be/6oCL9a9mZoU','_blank')"
-        style="background:#ff77aa;
-               color:white;
-               border:none;
-               padding:15px 35px;
-               border-radius:50px;
-               font-size:22px;
-               cursor:pointer;">
-        ▶ Play
+    <button onclick="window.open('https://youtu.be/6oCL9a9mZoU','_blank')">
+      ▶ Play
     </button>
+  </div>
 
 </div>
     
-    
-    
-    
-
 </iframe>
 <div class="gift" onclick="showGift()">
 🎁 Gift 3
