@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do you love me? ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9ec4,#ffd6e7);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,0,0,.2);
+max-width:700px;
+width:100%;
+}
+
+h1,h2{
+color:#ff2d75;
+}
+.music-card{
+    display:flex;
+    gap:20px;
+    background:#ffd6e7;
+    border-radius:20px;
+    padding:20px;
+    align-items:center;
+    margin:20px 0;
+}
+
+.record{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:radial-gradient(circle,#ff8fb8 15%,#222 16%,#111 35%,#333 60%,#111 100%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-weight:bold;
+    animation:spin 6s linear infinite;
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+.video{
+    flex:1;
+}
+
+.video iframe{
+    width:100%;
+    height:220px;
+    border:none;
+    border-radius:15px;
+}
+
+.play-btn{
+    margin-top:15px;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    background:#ff7fb3;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+button{
+padding:12px 25px;
+font-size:18px;
+margin:10px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+}
+
+#yes{
+background:#ff2d75;
+color:white;
+}
+
+#no{
+background:#ddd;
+position:absolute;
+}
+
+#second{
+display:none;
+}
+
+.gift{
+margin:15px 0;
+padding:15px;
+background:#ffb3d1;
+border-radius:12px;
+cursor:pointer;
+font-size:22px;
+}
+
+.music-card{
+background:#ffd6e7;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+.music-card iframe{
+width:100%;
+height:250px;
+border:none;
+border-radius:15px;
+}
+
+.play-btn{
+margin-top:15px;
+width:100%;
+background:#ff6fa9;
+color:white;
+font-size:20px;
+padding:15px;
+border:none;
+border-radius:15px;
+cursor:pointer;
+}
+
+.play-btn:hover{
+background:#ff4f95;
+}
+
+img{
+width:260px;
+border-radius:15px;
+margin-top:20px;
+display:none;
+}
+
+#text{
+display:none;
+color:#ff2d75;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box" id="first">
+
+<h1>Do you love me? ❤️</h1>
+
+<button id="yes">YES ❤️</button>
+<button id="no">NO 😅</button>
+
+</div>
+
+<div class="box" id="second">
+
+<h2>I knew you'd say yes 💕</h2>
+
+<div class="gift" onclick="alert('Nothing 😅')">
+🎁 Gift 1
+</div>
+
+<div class="gift" onclick="document.getElementById('song').play()">
+🎁 Gift 2
+</div>
+<audio id="song">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<h2>🎵 A Song That Reminds Me of Us</h2>
+
+
+<div class="music-card">
+
+<div class="disc">💿</div>
+
+<div class="video-box">
+<iframe
+src="https://www.youtube.com/embed/6oCL9a9mZoU"
+title="YouTube video"
+width="100%"
+height="220"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+<button class="play-btn"
+onclick="window.open('https://youtu.be/6oCL9a9mZoU','_blank')">
+▶ Play Song
+</button>
+
+</div>
+
+</div>
+<div class="gift" onclick="showGift()">
+🎁 Gift 3
+</div>
+
+<img id="photo" src="https://i.postimg.cc/prs57v9z/IMG-0416.jpg">
+
+<h2 id="text">
+💝 You are my best gift 💝
+</h2>
+
+</div>
+
+<script>
+
+const no=document.getElementById("no");
+
+no.addEventListener("mouseover",()=>{
+
+no.style.left=Math.random()*80+"%";
+no.style.top=Math.random()*80+"%";
+
+});
+
+document.getElementById("yes").onclick=()=>{
+
+document.getElementById("first").style.display="none";
+document.getElementById("second").style.display="block";
+
+};
+
+function showGift(){
+
+document.getElementById("photo").style.display="block";
+document.getElementById("text").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
